@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HillSide Multi purpose HTML5 Website Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="http://webthemez.com" />
+<!-- css --> 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../materialize/css/materialize.min.css" media="screen,projection" />
+<link href="../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../css/fancybox/jquery.fancybox.css" rel="stylesheet"> 
+<link href="../css/flexslider.css" rel="stylesheet" /> 
+<link href="../css/style.css" rel="stylesheet" />
+<script src="../js/app.js"></script>
+ 
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body onload="editProperty(), propertySubType()">
+<div id="wrapper"> 
+	<!-- <header class="topbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+				   <ul class="social-network">
+					<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-linkedin"></i></a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-pinterest"></i></a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-google-plus"></i></a></li>
+				</ul>
+				</div>
+				<div class="col-sm-9">
+					<div class="row">
+						<ul class="info"> 
+							<li><i class="icon-info-blocks material-icons">question_answer</i><span>info@HillSide.com</span></li>
+							<li><i class="icon-info-blocks material-icons">perm_phone_msg</i><span>+(012) 345 6789</span></li>
+						</ul>
+						<div class="clr"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</header> -->
+
+	<!-- start header -->
+		<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><i class="icon-info-blocks material-icons">account_balance</i>HillSide</a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a class="waves-effect waves-dark" href="index.html">Home</a></li> 
+						 <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="waves-effect waves-dark" href="about.html">Company</a></li>
+                            <li><a class="waves-effect waves-dark" href="#">Our Team</a></li>
+                            <li><a class="waves-effect waves-dark" href="#">News</a></li> 
+                            <li><a class="waves-effect waves-dark" href="#">Investors</a></li>
+                        </ul>
+                    </li> 
+						<li><a class="waves-effect waves-dark" href="projects.html">Projects</a></li>
+                        <li><a class="waves-effect waves-dark" href="portfolio.html">Gallery</a></li>
+                        <li class="HillSide"><a href="pricing.html" class="waves-effect waves-dark">Pricing</a></li>
+                        <li><a class="waves-effect waves-dark" href="contact.html">Contact</a></li>
+												<li><a class="waves-effect waves-dark" href="login.html">Sign In</a></li>
+                        <li><a class="waves-effect waves-dark" href="register.html">Join Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header><!-- end header -->
+	<section id="inner-headline">
+	<div class="container">
+	
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="pageTitle">Dashboard</h2>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+    <div class="container content" id="LogInContainer" style="margin-bottom: 20px;">
+      <div id="editProperty">
+
+			</div>
+			
+			<button class="btn btn-success" style="width: fit-content;" onclick="additionalAttributes()">Add attributes</button>
+
+      <p>
+				<input class="btn btn-success" type="submit" onclick="submitProperty()" value="Submit">
+			 </p>
+    </div>
+  </section>
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="widget">
+					<h5 class="widgetheading">Our Contact</h5>
+					<address>
+					<strong>Bootstrap company Inc</strong><br>
+					JC Main Road, Near Silnile tower<br>
+					 Pin-21542 NewYork US.</address>
+					<p>
+						<i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
+						<i class="icon-envelope-alt"></i> email@domainname.com
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="widget">
+					<h5 class="widgetheading">Quick Links</h5>
+					<ul class="link-list">
+						<li><a class="waves-effect waves-dark" href="#">Latest Events</a></li>
+						<li><a class="waves-effect waves-dark" href="#">Terms and conditions</a></li>
+						<li><a class="waves-effect waves-dark" href="#">Privacy policy</a></li>
+						<li><a class="waves-effect waves-dark" href="#">Career</a></li>
+						<li><a class="waves-effect waves-dark" href="#">Contact us</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="widget">
+					<h5 class="widgetheading">Latest posts</h5>
+					<ul class="link-list">
+						<li><a class="waves-effect waves-dark" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+						<li><a class="waves-effect waves-dark" href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+						<li><a class="waves-effect waves-dark" href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-3">
+					<div class="widget">
+					<h5 class="widgetheading">Recent News</h5>
+					<ul class="link-list">
+						<li><a class="waves-effect waves-dark" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+						<li><a class="waves-effect waves-dark" href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+						<li><a class="waves-effect waves-dark" href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						<p>
+							<span>&copy; Bootstrap Template 2018 All right reserved. <a href="https://webthemez.com/tag/free" target="_blank">Free HTML Templates</a> by WebThemez.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<ul class="social-network">
+						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+</div>
+<a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up HillSide"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.easing.1.3.js"></script>
+<script src="../materialize/js/materialize.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.fancybox.pack.js"></script>
+<script src="../js/jquery.fancybox-media.js"></script>  
+<script src="../js/jquery.flexslider.js"></script>
+<script src="../js/animate.js"></script>
+<!-- Vendor Scripts -->
+<script src="../js/modernizr.custom.js"></script>
+<script src="../js/jquery.isotope.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/animate.js"></script> 
+<script src="../js/custom.js"></script>
+<script>
+	var i=0;
+  function additionalAttributes(){
+ $('#editProperty').append('<br class="label'+i+'"><label class="label'+i+'">Additional Attribute</label><br class="label'+i+'"><input class="addAttr" name="additionalAttribute[]" id="additionalAttribute'+i+'" type="text" placeholder="Specify Attribute"><input class="addAttr" name="additionalAttribute[]" id="additionalAttributeValue'+i+'" type="text" placeholder="Specify Attribute Value"> &nbsp; <button class="btn" id="btnID'+i+'" onclick="removeAttr('+"'additionalAttribute"+i+"','btnID"+i+"','additionalAttributeValue"+i+"','label"+i+"'"+')">remove</button>');
+i++;
+	}
+	function removeAttr(id,btnID,valID,labelID){
+		 $('#'+id).remove();
+		 $('#'+btnID).remove();
+		 $('#'+valID).remove();
+		 $('.'+labelID).remove();
+
+	}
+
+	function submitProperty(){
+		var propertyName=$('#propertyName').val()
+		var offeringPrice=$('#offeringPrice').val()
+		var holdPeriod=$('#holdPeriod').val()
+		var shortDescription=$('#shortDescription').val()
+		var longDescription=$('#longDescription').val()
+		var propertyType=$('#propertyType').val()
+		var propertySubType=$('#propertySubType').val()
+		var address=$('#address').val()
+		var city=$('#city').val()
+		var state=$('#state').val()
+		var region=$('#region').val()
+		var investmentOpeningDate=$('#investmentOpeningDate').val()
+		var investmentClosingDate=$('#investmentClosingDate').val()
+		var lotSize=$('#lotSize').val()
+		var investmentStrategy=$('#investmentStrategy').val()
+		var investmentType=$('#investmentType').val()
+		var targetIRR=$('#targetIRR').val()
+		var targetARR=$('#targetARR').val()
+		var targetCashOnCash=$('#targetCashOnCash').val()
+		var targetEquityMultiple=$('#targetEquityMultiple').val()
+		var averageCashYield=$('#averageCashYield').val()
+		var preferredReturn=$('#preferredReturn').val()
+		var projectedPassiveReturn=$('#projectedPassiveReturn').val()
+		var estimateHoldPeriod=$('#estimateHoldPeriod').val()
+		var minimumInvestmentAmount=$('#minimumInvestmentAmount').val()
+		var loanToCost=$('#loanToCost').val()
+		var distributionPeriod=$('#distributionPeriod').val()
+		var sponsorSplit=$('#sponsorSplit').val()
+		var investorSplit=$('#investorSplit').val()
+		var acquisitionFee=$('#acquisitionFee').val()
+		var asserManagementFee=$('#asserManagementFee').val()
+		var propertyManagementFee=$('#propertyManagementFee').val()
+		var purchaseSaleAgreementDate=$('#purchaseSaleAgreementDate').val()
+		var dueDiligenceCompletionDate=$('#dueDiligenceCompletionDate').val()
+		var privatePlacementMemorandumsDate=$('#privatePlacementMemorandumsDate').val()
+		var capitalRiseEndDate=$('#capitalRiseEndDate').val()
+		var closingDate=$('#closingDate').val()
+		var refinanceSaleFee=$('#refinanceSaleFee').val()
+		var capRateAtThePurchase=$('#capRateAtThePurchase').val()
+		var targetExitCapRate=$('#targetExitCapRate').val()
+		var investorAccreditation=$('#investorAccreditation').val()
+		var _1031ExchangEligible=$('#1031ExchangEligible').val()
+		var oppurtunityZone=$('#oppurtunityZone').val()
+		var image1=$('#image1')[0].files[0];
+		var image2=$('#image2')[0].files[0];
+		var image3=$('#image3')[0].files[0];
+		var image4=$('#image4')[0].files[0];
+		var image5=$('#image5')[0].files[0];
+
+		var additionalAttributes=document.getElementsByName('additionalAttribute[]')
+		var addAttr={}
+		var x=0;
+		for(x=0;x<additionalAttributes.length;x=x+2){
+			var a=additionalAttributes[x].value;
+			var b=additionalAttributes[x+1].value
+			 addAttr[a]=b
+		}
+		console.log(addAttr)
+		var data= {
+			propertyID:Math.floor(100000 + Math.random() * 900000),
+			propertyName:propertyName,
+			offeringPrice:offeringPrice,
+			holdPeriod:holdPeriod,
+			shortDescription:shortDescription,
+			longDescription:longDescription,
+			propertyType:propertyType,
+			propertySubType:propertySubType,
+			address:address,
+			city:city,
+			state:state,
+			region:region,
+			investmentOpeningDate:investmentOpeningDate,
+			investmentClosingDate:investmentClosingDate,
+			lotSize:lotSize,
+			investmentStrategy:investmentStrategy,
+			investmentType:investmentType,
+			targetIRR:targetIRR,
+			targetARR:targetARR,
+			targetCashOnCash:targetCashOnCash,
+			targetEquityMultiple:targetEquityMultiple,
+			averageCashYield:averageCashYield,
+			preferredReturn:preferredReturn,
+			projectedPassiveReturn:projectedPassiveReturn,
+			estimateHoldPeriod:estimateHoldPeriod,
+			minimumInvestmentAmount:minimumInvestmentAmount,
+			loanToCost:loanToCost,
+			distributionPeriod:distributionPeriod,
+			sponsorSplit:sponsorSplit,
+			investorSplit:investorSplit,
+			acquisitionFee:acquisitionFee,
+			asserManagementFee:asserManagementFee,
+			propertyManagementFee:propertyManagementFee,
+			purchaseSaleAgreementDate:purchaseSaleAgreementDate,
+			dueDiligenceCompletionDate:dueDiligenceCompletionDate,
+			privatePlacementMemorandumsDate:privatePlacementMemorandumsDate,
+			capitalRiseEndDate:capitalRiseEndDate,
+			closingDate:closingDate,
+			refinanceSaleFee:refinanceSaleFee,
+			capRateAtThePurchase:capRateAtThePurchase,
+			targetExitCapRate:targetExitCapRate,
+			investorAccreditation:investorAccreditation,
+			_1031ExchangEligible:_1031ExchangEligible,
+			oppurtunityZone:oppurtunityZone,
+			image1:image1,
+			image2:image2,
+			image3:image3,
+			image4:image4,
+			image5:image5,
+			additionalAttributes:addAttr
+					}
+					console.log(data)
+	// 	$.ajax({
+  //   type: 'POST',
+  //   url: '/addProperty',
+	// 	data:data,
+  //   success: function(res){ 
+  //       if(res=='success'){
+  //         alert('added')
+  //       }
+  //       else{
+  //          alert('Please check your credentials')
+  //       }
+     
+  //   }
+  // });
+
+
+	}
+
+	function propertySubType(){
+		if($('#propertyType').val()=='All'||$('#propertyType').val()=='Mixed Use'||$('#propertyType').val()=='Note/Loan'){
+			$('.propertySubType').css('display','none')
+			$('#propertySubType').css('display','none')
+			$('#propertySubType').val(null)
+		}
+		else if($('#propertyType').val()=='Retail'){
+			$('.propertySubType').css('display','block')
+			$('#propertySubType').css('display','block')
+      $('#propertySubType').html('<option value="Bank">Bank</option> <option value="Convenience Store">Convenience Store</option> <option value="Day Care/Nursery">Day Care/Nursery</option> <option value="QSR/Fast Food">QSR/Fast Food</option> <option value="Gas Station">Gas Station</option> <option value="Grocery">Grocery</option> <option value="Pharmacy/Drug">Pharmacy/Drug</option> <option value="Restaurant">Restaurant</option> <option value="Bar">Bar</option> <option value="Storefront">Storefront</option> <option value="Shopping Center">Shopping Center</option> <option value="Auto Shop">Auto Shop</option>')
+		}
+		else if($('#propertyType').val()=='Multifamily'){
+			$('.propertySubType').css('display','block')
+			$('#propertySubType').css('display','block')
+      $('#propertySubType').html('<option value="Student Housing">Student Housing</option> <option value="Senior Living">Senior Living</option> <option value="Mobile Home Park">Mobile Home Park</option> <option value="Single Family Rental Portfolio">Single Family Rental Portfolio</option> <option value="RV Park">RV Park</option> <option value="Apartment Building">Apartment Building</option>')
+		}
+		else if($('#propertyType').val()=='Office'){
+			$('.propertySubType').css('display','block')
+			$('#propertySubType').css('display','block')
+      $('#propertySubType').html('<option value="Executive Office">Executive Office</option> <option value="Medical Office">Medical Office</option> <option value="Creative Office">Creative Office</option>')
+		}
+		else if($('#propertyType').val()=='Industrial'){
+			$('.propertySubType').css('display','block')
+			$('#propertySubType').css('display','block')
+      $('#propertySubType').html('<option value="Flex">Flex</option> <option value="Warehouse">Warehouse</option> <option value="Distribution">Distribution</option> <option value="R&D">R&D</option> <option value="Manufacturing">Manufacturing</option> <option value="Self Storage">Self Storage</option> <option value="Refrigerated/Cold Storage">Refrigerated/Cold Storage</option>')
+		}
+		else if($('#propertyType').val()=='Hospitality'){
+			$('.propertySubType').css('display','block')
+			$('#propertySubType').css('display','block')
+      $('#propertySubType').html('<option value="Hotel">Hotel</option> <option value="Motel">Motel</option> <option value="Casino">Casino</option>')
+		}
+		else if($('#propertyType').val()=='Land'){
+			$('.propertySubType').css('display','block')
+			$('#propertySubType').css('display','block')
+      $('#propertySubType').html('<option value="Agricultural">Agricultural</option> <option value="Residential">Residential</option> <option value="Commercial">Commercial</option> <option value="Industrial">Industrial</option> <option value="Islands">Islands</option> <option value="Farm">Farm</option> <option value="Ranch">Ranch</option> <option value="Timber">Timber</option> <option value="Hunting/Recreational">Hunting/Recreational</option>')
+		}
+		else if($('#propertyType').val()=='Special Purpose'){
+			$('.propertySubType').css('display','block')
+			$('#propertySubType').css('display','block')
+      $('#propertySubType').html('<option value="Telecom/Data Center">Telecom/Data Center</option> <option value="Sports/Entertainment">Sports/Entertainment</option> <option value="Marina">Marina</option> <option value="Golf Course">Golf Course</option> <option value="School">School</option> <option value="Religious/Church">Religious/Church</option> <option value="Garage/Parking">Garage/Parking</option> <option value="Car Wash">Car Wash</option>')
+		}
+
+	}
+
+
+
+
+	var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            return ret;
+        }
+</script>
+<!-- <option value="Telecom/Data Center">Telecom/Data Center</option>
+<option value="Sports/Entertainment">Sports/Entertainment</option>
+<option value="Marina">Marina</option>
+<option value="Golf Course">Golf Course</option>
+<option value="School">School</option>
+<option value="Religious/Church">Religious/Church</option>
+<option value="Garage/Parking">Garage/Parking</option>
+<option value="Car Wash">Car Wash</option>
+<option value="Timber">Timber</option>
+<option value="Hunting/Recreational">Hunting/Recreational</option>
+<option value="Auto Shop">Auto Shop</option> -->
+
+</body>
+</html>
