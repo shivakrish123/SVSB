@@ -15,7 +15,7 @@ function GetSortOrder(prop) {
 } 
 
 
-module.exports.filterProperties = async (req,res) => {
+module.exports.filterPropertiesAdmin = async (req,res) => {
    
 
 
@@ -47,12 +47,13 @@ if(req.body.sortBy!="none"){
     tileData.forEach(function(x){
       tileDataList+="<li>"+x.replace(/([A-Z]+)/g, " $1").replace(/([A-Z][a-z])/g, " $1")+": <span style='color:black;'>"+result[x]+"</span></li>"
     })
-    text=text+'<div class="card small col-lg-4 col-md-4 col-sm-6" style="padding: 0;"> <div class="thumbnail img-thumb-bg"> <img class="img-responsive" src="'+result.image1+'" alt=""> <div class="overlay"></div> <div class="caption"> <div class="tag"><a href="#">'+result.propertyType+'</a></div> <div class="title"><a href="#">'+result.propertyName+'</a></div> <div class="clearfix"> <span class="meta-data">'+result.city+', '+result.state+'</span>  </div> <div class="content"> <p>'+result.shortDescription+'</p> </div> </div> </div> <div class="card-attributes"> <span class="price">$'+result.offeringPrice+'</span> <ul id="tileDataAttributes">' +tileDataList+'</ul> <br> <a href="javascript:void(0)" onclick='+"'"+'setProperty('+""+JSON.stringify(result)+""+')'+"'"+' class="btn btn-detail">Details</a> </div> </div>'
+    text=text+'<div class="card small col-lg-4 col-md-4 col-sm-6" style="padding: 0;"> <div class="thumbnail img-thumb-bg"> <img class="img-responsive" src="'+result.image1+'" alt=""> <div class="overlay"></div> <div class="caption"> <div class="tag"><a href="#">'+result.propertyType+'</a></div> <div class="title"><a href="#">'+result.propertyName+'</a></div> <div class="clearfix"> <span class="meta-data">'+result.city+', '+result.state+'</span>  </div> <div class="content"> <p>'+result.shortDescription+'</p> </div> </div> </div> <div class="card-attributes"> <span class="price">$'+result.offeringPrice+'</span> <ul id="tileDataAttributes">'+tileDataList+'</ul> <br> <a onclick='+"'"+'setEditProperty('+""+JSON.stringify(result)+""+')'+"'"+' href="javascript:void(0)" class="btn btn-detail">Edit</a> </div> </div>'
   })
 
   if(!text){
     text="<center><h3>No Results Found</h3></center>"
   }
+
   res.send(text);
 
 

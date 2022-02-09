@@ -14,8 +14,11 @@ app.use(session({secret: 'ssshhhhh'})); // secret is necessary for managing sess
 
 let addProperty = require('./modeler/addProperty');
 let filterProperties = require('./modeler/filterProperties');
+let filterPropertiesAdmin = require('./modeler/filterPropertiesAdmin');
 let login = require('./modeler/login');
 let register = require('./modeler/register');
+let updateProperty = require('./modeler/updateProperty');
+let setTileData = require('./modeler/setTileData');
 let getProperties=require('./modeler/getProperties')
 let getPropertiesForEdit=require('./modeler/getPropertiesForEdit')
 // do url routing
@@ -30,6 +33,9 @@ app.post('/addProperty',(req,res)=>{
 app.post('/filterProperties',(req,res)=>{
     filterProperties.filterProperties(req,res);
 });
+app.post('/filterPropertiesAdmin',(req,res)=>{
+    filterPropertiesAdmin.filterPropertiesAdmin(req,res);
+});
 
 app.post('/login',(req,res)=>{
     //const s = req.session;
@@ -38,6 +44,14 @@ app.post('/login',(req,res)=>{
 app.post('/register',(req,res)=>{
     //const s = req.session;
     register.register(req,res);
+})
+app.post('/updateProperty',(req,res)=>{
+    //const s = req.session;
+    updateProperty.updateProperty(req,res);
+})
+app.post('/setTileData',(req,res)=>{
+    //const s = req.session;
+    setTileData.setTileData(req,res);
 })
 app.post('/getPropertiesForEdit',(req,res)=>{
     //const s = req.session;

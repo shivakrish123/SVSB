@@ -7,6 +7,79 @@ Note: Licence under Creative Commons Attribution 3.0
 @import url('font-awesome.css');  
 @import url('animate.css');
 
+.AdminDownloadButton{
+	margin: 0 20px;
+}
+.item img{
+	max-height: 300px;
+}
+.item{
+	text-align: center;
+}
+.carousel-control.right ,.carousel-control.left {
+	background-image: none;
+}
+.card.small{
+margin: 0.5rem 1rem 0.5rem 1rem;
+}
+.preloader{
+	position: fixed;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.65);
+	z-index: 20000000;
+}
+#dropdownIcon{
+	color: white;
+	transition: 0.5s;
+}
+#tileContentDropdown{
+	right: 3%;
+	z-index: 2000;
+	position: absolute;
+	background-color: white;
+	padding: 10px;
+}
+.tileDataList{
+	max-height: 200px;
+	overflow-y: scroll;
+	text-align: left;
+	width: max-content;
+}
+.tileDataList li label{
+	font-size: 1.4rem;
+}
+.custom-rows{
+margin: 10px auto;
+font-size: 130%;
+color: rgb(100, 100, 100);
+}
+.custom-rows .value{
+	color: black;
+}
+.targetRow{
+	color: black;
+	margin: 20px 0;
+	font-size: 130%;
+}
+.targetRow hr{
+	border-color: black;
+	width: 70%;
+	margin: 10px auto;
+}
+.targetRow .col-sm-3{
+	margin-top:40px ;
+
+}
+.target{
+	font-size: 180%;
+	color:#008080;
+	margin-bottom: 10px;
+}
+
 .signinFormFile{
 	font-size: medium;
 }
@@ -591,8 +664,13 @@ display: none;
 margin: 20px 0;
 }
 .carousel-indicators {
-bottom: -30px;
-}
+	bottom: -10px;
+
+	}
+.carousel-indicators li,.carousel-indicators li.active {
+	margin-right:5px;
+	margin-left: 5px;
+	}
 .text-center img {
 margin: auto;
 }

@@ -99,13 +99,13 @@
 <div class="filters col-sm-3">
 	<h4>Sort By</h4>
 	<div class="filterSection" id="sortby">
-	 <input name="sortBy" type="radio" id="recent">
+	 <input value="timeStamp" name="sortBy" type="radio" id="recent">
 	 <label for="recent">Recently added</label><br>
-	 <input name="sortBy" type="radio" id="irr">
+	 <input value="targetIRR" name="sortBy" type="radio" id="irr">
 	 <label for="irr">IRR</label><br>
-	 <input name="sortBy" type="radio" id="coc">
+	 <input value="targetCashOnCash" name="sortBy" type="radio" id="coc">
 	 <label for="coc">Cash on cash</label><br>
-	 <input name="sortBy" type="radio" id="holdPeriod">
+	 <input value="estimateHoldPeriod" name="sortBy" type="radio" id="holdPeriod">
 	 <label for="holdPeriod">Hold period</label>
 	</div>
 	<hr>
@@ -164,7 +164,7 @@
 		</form>
 	
 	 </div>
-<button class="btn btn-success" onclick="filterProperties()"> Apply </button>
+<button class="btn btn-success" onclick="filterProperties('user')"> Apply </button>
 </div>
 
 		<div class="container content col-sm-9">		
@@ -315,7 +315,7 @@ function getProperties(){
     type: 'GET',
     url: '/getProperties',
     success: function(res){ 
-       $('#propertiesContainer').html(res)     
+			 $('#propertiesContainer').html(res)     
     }
   });
 }

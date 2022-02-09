@@ -13,6 +13,7 @@
 <link href="../css/fancybox/jquery.fancybox.css" rel="stylesheet"> 
 <link href="../css/flexslider.css" rel="stylesheet" /> 
 <link href="../css/style.css" rel="stylesheet" />
+<link href="../css/font-awesome.css" rel="stylesheet" />
 <link href="../css/propertyCard.css" rel="stylesheet" />
 <script src="../js/app.js"></script>
 
@@ -99,13 +100,13 @@
 		<div class="filters col-sm-3">
 			<h4>Sort By</h4>
 			<div class="filterSection" id="sortby">
-			 <input name="sortBy" type="radio" id="recent">
+			 <input value="timeStamp" name="sortBy" type="radio" id="recent">
 			 <label for="recent">Recently added</label><br>
-			 <input name="sortBy" type="radio" id="irr">
+			 <input value="targetIRR" name="sortBy" type="radio" id="irr">
 			 <label for="irr">IRR</label><br>
-			 <input name="sortBy" type="radio" id="coc">
+			 <input value="targetCashOnCash" name="sortBy" type="radio" id="coc">
 			 <label for="coc">Cash on cash</label><br>
-			 <input name="sortBy" type="radio" id="holdPeriod">
+			 <input value="estimateHoldPeriod" name="sortBy" type="radio" id="holdPeriod">
 			 <label for="holdPeriod">Hold period</label>
 			</div>
 			<hr>
@@ -164,16 +165,152 @@
 				</form>
 			
 			 </div>
-		<button class="btn btn-success" onclick="filterProperties()"> Apply </button>
+		<button class="btn btn-success" onclick="filterProperties('admin')"> Apply </button>
 		</div>
 
 		<div class="container content col-sm-9">		
         <!-- Service Blcoks -->
 			
 						<div class="row"> 
-							<div class="col-md-12">
+							<div class="col-md-12" style="text-align: right;">
 								<div class="about-logo">
-									<h3>Our Best <span class="color">Projects</span></h3>
+									<p><a onclick="dropdownFun()" style="width: max-content;margin-right: 3%;" class="btn btn-success" data-toggle="collapse" href="#tileContentDropdown" aria-expanded="false" aria-controls="tileContentDropdown">Select Tile Data <i class="fa fa-caret-down" id="dropdownIcon" aria-hidden="true"></i> </a>
+									</p>
+									<div class="collapse" id="tileContentDropdown">
+									<ul class="tileDataList">
+										<li>
+											<input name="tileData" value="investmentOpeningDate" type="checkbox" id="investmentOpeningDate">
+											<label for="investmentOpeningDate">Investment Opening Date</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="investmentClosingDate" id="investmentClosingDate">
+											<label for="investmentClosingDate">Investment Closing Date</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="lotSize" id="lotSize">
+											<label for="lotSize">Lot Size</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="investmentStrategy" id="investmentStrategyDropdown">
+											<label for="investmentStrategyDropdown">Investment Strategy</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="investmentType" id="investmentTypeDropdown">
+											<label for="investmentTypeDropdown">Investment Type</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="targetIRR" id="targetIRR">
+											<label for="targetIRR">Target IRR</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="targetARR" id="targetARR">
+											<label for="targetARR">Target ARR</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="targetCashOnCash" id="targetCashOnCash">
+											<label for="targetCashOnCash">Target Cash On Cash</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="targetEquityMultiple" id="targetEquityMultiple">
+											<label for="targetEquityMultiple">Target Equity Multiple</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="averageCashYield" id="averageCashYield">
+											<label for="averageCashYield">Average Cash Yield</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="preferredReturn" id="preferredReturn">
+											<label for="preferredReturn">Preferred Return</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="projectedPassiveReturn" id="projectedPassiveReturn">
+											<label for="projectedPassiveReturn">Projected Passive Return</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="estimateHoldPeriod" id="estimateHoldPeriod">
+											<label for="estimateHoldPeriod">Estimated Hold Period</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="minimumInvestmentAmount" id="minimumInvestmentAmount">
+											<label for="minimumInvestmentAmount">Minimum Investment Amount</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="loanToCost" id="loanToCost">
+											<label for="loanToCost">Loan To Cost</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="distributionPeriod" id="distributionPeriod">
+											<label for="distributionPeriod">Distribution Period</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="sponsorSplit" id="sponsorSplit">
+											<label for="sponsorSplit">Sponsor Split</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="investorSplit" id="investorSplit">
+											<label for="investorSplit">Investor Split</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="acquisitionFee" id="acquisitionFee">
+											<label for="acquisitionFee">Acquisition Fee</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="assetManagementFee" id="assetManagementFee">
+											<label for="assetManagementFee">Asset Management Fee</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="propertyManagementFee" id="propertyManagementFee">
+											<label for="propertyManagementFee">Property Management Fee</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="purchaseSaleAgreementDate" id="purchaseSaleAgreementDate">
+											<label for="purchaseSaleAgreementDate">Purchase Sale Agreement Date</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="dueDiligenceCompletionDate" id="dueDiligenceCompletionDate">
+											<label for="dueDiligenceCompletionDate">Due Diligence Completion Date</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="privatePlacementMemorandumsDate" id="privatePlacementMemorandumsDate">
+											<label for="privatePlacementMemorandumsDate">Private Placement Memorandums Date</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="capitalRiseEndDate" id="capitalRiseEndDate">
+											<label for="capitalRiseEndDate">Capital Rise End Date</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="closingDate" id="closingDate">
+											<label for="closingDate">Closing Date</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="refinanceSaleFee" id="refinanceSaleFee">
+											<label for="refinanceSaleFee">Refinance Sale Fee</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="capRateAtThePurchase" id="capRateAtThePurchase">
+											<label for="capRateAtThePurchase">Cap Rate At The Purchase</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="targetExitCapRate" id="targetExitCapRate">
+											<label for="targetExitCapRate">Target Exit Cap Rate</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="investorAccreditation" id="investorAccreditation">
+											<label for="investorAccreditation">Investor Accreditation</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="_1031ExchangEligible" id="_1031ExchangEligible">
+											<label for="_1031ExchangEligible">_1031 Exchange Eligible</label>
+										</li>
+										<li>
+											<input type="checkbox" name="tileData" value="oppurtunityZone" id="oppurtunityZone">
+											<label for="oppurtunityZone">Oppurtunity Zone</label>
+										</li>
+
+									</ul>
+									<button class="btn" onclick="setTileData()" style="margin:20px 5px">Apply</button>
+
+									</div>
 								</div>  
 							</div>
 						</div>
@@ -317,10 +454,32 @@ function getPropertiesForEdit(){
     data:{sample:'sample'},
     url: '/getPropertiesForEdit',
     success: function(res){ 
-       $('#propertiesContainer').html(res)     
+			 $('#propertiesContainer').html(res[0])
+			 res[1].forEach(function(x){
+				 if(x=="investmentType"||x=="investmentStrategy"){
+					 x=x+"Dropdown";
+				 }
+				 $('#'+x).prop('checked','true');
+			 })     
     }
   });
 }
+function showFilters(){
+	if($('.filters').css('display')=='block'){
+		$('.filters').css('display','none');
+	}
+	else{
+		$('.filters').css('display','block');
+	}
+}
+
+function dropdownFun(){
+	if(document.getElementById('dropdownIcon').style.transform=="rotate(180deg)")
+document.getElementById('dropdownIcon').style.transform="rotate(0deg)"
+else
+document.getElementById('dropdownIcon').style.transform="rotate(180deg)"
+}
+
 </script>
 </div>
 </body>

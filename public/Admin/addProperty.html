@@ -135,6 +135,8 @@
 				 <input required class="signinForm" id="investmentClosingDate" type="date">
 				 <p><label for="lotSize">Lot Size</label></p>
 				 <input required class="signinForm" id="lotSize" type="number" placeholder="1.0" step="0.01">
+				 <p><label for="squareFeet">Square Feet</label></p>
+				 <input required class="signinForm" id="squareFeet" type="number" placeholder="1.0" step="0.01">
 				 <p><label for="investmentStrategy">Investment Strategy</label></p>
 				 <select class="signinForm" id="investmentStrategy" >
 					 <option value="REITs">REITs</option>
@@ -184,8 +186,8 @@
 				 <input required class="signinForm" id="investorSplit" type="text" placeholder="Investor Split">
 				 <p><label for="acquisitionFee">Acquisition Fee</label></p>
 				 <input required class="signinForm" id="acquisitionFee" type="text" placeholder="Acquisition Fee">
-				 <p><label for="asserManagementFee">Asset Management Fee</label></p>
-				 <input required class="signinForm" id="asserManagementFee" type="text" placeholder="Asset Management Fee">
+				 <p><label for="assetManagementFee">Asset Management Fee</label></p>
+				 <input required class="signinForm" id="assetManagementFee" type="text" placeholder="Asset Management Fee">
 				 <p><label for="propertyManagementFee">Property Management Fee</label></p>
 				 <input required class="signinForm" id="propertyManagementFee" type="text" placeholder="Property Management Fee">
 				 <p><label for="purchaseSaleAgreementDate">Purchase Sale Agreement Date</label></p>
@@ -350,6 +352,7 @@ i++;
 		var investmentOpeningDate=$('#investmentOpeningDate').val()
 		var investmentClosingDate=$('#investmentClosingDate').val()
 		var lotSize=$('#lotSize').val()
+		var squareFeet=$('squareFeet').val()
 		var investmentStrategy=$('#investmentStrategy').val()
 		var investmentType=$('#investmentType').val()
 		var targetIRR=$('#targetIRR').val()
@@ -366,7 +369,7 @@ i++;
 		var sponsorSplit=$('#sponsorSplit').val()
 		var investorSplit=$('#investorSplit').val()
 		var acquisitionFee=$('#acquisitionFee').val()
-		var asserManagementFee=$('#asserManagementFee').val()
+		var assetManagementFee=$('#assetManagementFee').val()
 		var propertyManagementFee=$('#propertyManagementFee').val()
 		var purchaseSaleAgreementDate=$('#purchaseSaleAgreementDate').val()
 		var dueDiligenceCompletionDate=$('#dueDiligenceCompletionDate').val()
@@ -395,7 +398,7 @@ i++;
 		}
 		console.log(addAttr)
 		var data= {
-			propertyID:Math.floor(100000 + Math.random() * 900000);
+			propertyID:Math.floor(100000 + Math.random() * 900000),
 			propertyName:propertyName,
 			offeringPrice:offeringPrice,
 			holdPeriod:holdPeriod,
@@ -410,6 +413,7 @@ i++;
 			investmentOpeningDate:investmentOpeningDate,
 			investmentClosingDate:investmentClosingDate,
 			lotSize:lotSize,
+			squareFeet:squareFeet,
 			investmentStrategy:investmentStrategy,
 			investmentType:investmentType,
 			targetIRR:targetIRR,
@@ -426,7 +430,7 @@ i++;
 			sponsorSplit:sponsorSplit,
 			investorSplit:investorSplit,
 			acquisitionFee:acquisitionFee,
-			asserManagementFee:asserManagementFee,
+			assetManagementFee:assetManagementFee,
 			propertyManagementFee:propertyManagementFee,
 			purchaseSaleAgreementDate:purchaseSaleAgreementDate,
 			dueDiligenceCompletionDate:dueDiligenceCompletionDate,
@@ -444,23 +448,24 @@ i++;
 			image3:image3,
 			image4:image4,
 			image5:image5,
+			timeStamp:new Date.getTime(),
 			additionalAttributes:addAttr
 					}
 					console.log(data)
-	// 	$.ajax({
-  //   type: 'POST',
-  //   url: '/addProperty',
-	// 	data:data,
-  //   success: function(res){ 
-  //       if(res=='success'){
-  //         alert('added')
-  //       }
-  //       else{
-  //          alert('Please check your credentials')
-  //       }
+		$.ajax({
+    type: 'POST',
+    url: '/addProperty',
+		data:data,
+    success: function(res){ 
+        if(res=='success'){
+          alert('added')
+        }
+        else{
+           alert('Something went wrong')
+        }
      
-  //   }
-  // });
+    }
+  });
 
 
 	}
