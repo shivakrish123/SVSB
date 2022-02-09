@@ -1,7 +1,7 @@
 
 //var con = require('./db_connection');
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/mydb";
+const { MongoClient } = require('mongodb');
+const url = "mongodb+srv://sainatharjun:saisai71@cluster0.zroar.mongodb.net/SVSB?retryWrites=true&w=majority";
 
 function GetSortOrder(prop) {    
   return function(a, b) {    
@@ -59,7 +59,7 @@ if(req.body.sortBy!="none"){
 
 
 
-  //  MongoClient.connect(url, function(err, db) {
+  //  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
   //   if (err) throw err;
     
   //   // db.close();

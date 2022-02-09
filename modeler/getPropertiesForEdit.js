@@ -1,5 +1,5 @@
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/mydb";
+const { MongoClient } = require('mongodb');
+const url = "mongodb+srv://sainatharjun:saisai71@cluster0.zroar.mongodb.net/SVSB?retryWrites=true&w=majority";
 
 
 
@@ -8,7 +8,7 @@ module.exports.getPropertiesForEdit = async (req,res) => {
    
 
     var query={}
-    MongoClient.connect(url, async function(err, db) {
+    MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, async function(err, db) {
         if (err) throw err;
         
 
