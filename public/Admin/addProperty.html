@@ -13,6 +13,33 @@
 <link href="../css/fancybox/jquery.fancybox.css" rel="stylesheet"> 
 <link href="../css/flexslider.css" rel="stylesheet" /> 
 <link href="../css/style.css" rel="stylesheet" />
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAK4DzQwgpI6IA3Dwpqp2aeqNYLTpv-BgI",
+    authDomain: "svsb-608a1.firebaseapp.com",
+    projectId: "svsb-608a1",
+    storageBucket: "svsb-608a1.appspot.com",
+    messagingSenderId: "967033826890",
+    appId: "1:967033826890:web:b267684f94f452250980b3",
+    measurementId: "G-HSSZR9GKP3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -337,7 +364,7 @@ i++;
 
 	}
 
-	function submitProperty(){
+	async function submitProperty(){
 		var propertyName=$('#propertyName').val()
 		var offeringPrice=$('#offeringPrice').val()
 		var holdPeriod=$('#holdPeriod').val()
@@ -397,6 +424,13 @@ i++;
 			 addAttr[a]=b
 		}
 		console.log(addAttr)
+		image1=await uploadFile(image1)
+		image2=await uploadFile(image2)
+		image3=await uploadFile(image3)
+		image4=await uploadFile(image4)
+		image5=await uploadFile(image5)
+
+		var date=new Date().getTime()
 		var data= {
 			propertyID:Math.floor(100000 + Math.random() * 900000),
 			propertyName:propertyName,
@@ -448,7 +482,7 @@ i++;
 			image3:image3,
 			image4:image4,
 			image5:image5,
-			timeStamp:new Date.getTime(),
+			timeStamp:date,
 			additionalAttributes:addAttr
 					}
 					console.log(data)
@@ -515,7 +549,17 @@ i++;
 	}
 
 
+	async function uploadFile(file) {
+  const storageRef = firebase.storage().ref();
+	var uploadTask = storageRef.child('Properties/'+file.name);
+	await uploadTask.put(file);
 
+var downloadurl=await uploadTask.getDownloadURL();
+
+return downloadurl;
+
+
+}
 
 	var specialKeys = new Array();
         specialKeys.push(8); //Backspace

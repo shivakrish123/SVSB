@@ -30,7 +30,7 @@ module.exports.register = async (req,res) => {
                  flag=0;
                   
                 });
-                send="Account Created!"
+                var send="Account Created!"
                 res.send(send)
                }
             })
