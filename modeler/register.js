@@ -1,6 +1,6 @@
 //var con = require('./db_connection');
 const { MongoClient } = require('mongodb');
-const url = "mongodb+srv://sainatharjun:saisai71@cluster0.zroar.mongodb.net/SVSB?retryWrites=true&w=majority&authSource=SVSB";
+const url = "mongodb+srv://sainatharjun:saisai71@cluster0.zroar.mongodb.net/SVSB?retryWrites=true&w=majority";
 
 
 
