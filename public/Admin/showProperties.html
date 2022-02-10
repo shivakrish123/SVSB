@@ -24,6 +24,12 @@
 
 </head>
 <body onload="getPropertiesForEdit()">
+	<div id="preloader" class="preloader">
+		
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<p><lottie-player src="https://assets8.lottiefiles.com/packages/lf20_EzPrWM.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+</p>
+	</div>
 <div id="wrapper"> 
 	<!-- <header class="topbar">
 		<div class="container">
@@ -317,32 +323,11 @@
 						 
 						 
 	<div id="propertiesContainer" class="row service-v1 margin-bottom-40">
-						<div class="card small col-lg-4 col-md-4 col-sm-6" style="padding: 0;">
-							<div class="thumbnail img-thumb-bg">
-								<img class="img-responsive" src="img/service2.jpg" alt="">   
-									<div class="overlay"></div>
-									<div class="caption">
-											<div class="tag"><a href="#">'+result.propertyType+'</a></div>
-											<div class="title"><a href="#">'+result.propertyName+'</a></div>
-											<div class="clearfix">
-													<span class="meta-data">'+result.city+', '+result.state+'</span>
-													<!-- <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span> -->
-											</div>
-											<div class="content">
-													<p>'+result.shortDescription+'</p>
-											</div>
-									</div>
-							</div>
-							<div class="card-attributes">
-								<span class="price">$'+result.offeringPrice+'</span>
-                <ul>
-									<li>attribute1 : value1</li>
-									<li>attribute2 : value2</li>
-								</ul>
-								<br>
-									<a href="details.html" class="btn btn-detail">Details</a>
-							</div>
-					 </div>
+		<div style="text-align: center;">
+			<h3>
+				Loading Properties...
+			</h3>
+		</div>
         </div>
 		
 </div>

@@ -21,6 +21,12 @@
 
 </head>
 <body>
+	<div id="preloader" class="preloader">
+		
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<p><lottie-player src="https://assets8.lottiefiles.com/packages/lf20_EzPrWM.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+</p>
+	</div>
 <div id="wrapper"> 
 	<!-- <header class="topbar">
 		<div class="container">
@@ -206,6 +212,7 @@
 
 <script>
   function register(){
+		$('#preloader').show();
    var email=$('#email').val();
    var password=$('#password').val();
    var firstName=$('#firstName').val();
