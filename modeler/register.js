@@ -3,7 +3,12 @@ const { MongoClient } = require('mongodb');
 const url = "mongodb+srv://sainatharjun:saisai71@cluster0.zroar.mongodb.net/SVSB?retryWrites=true&w=majority";
 
 
-
+function encrypt(clear)
+  {
+    var cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
+    cipher = cipher.toString();
+    return cipher;
+  }
 
 
 
@@ -14,9 +19,9 @@ module.exports.register = async (req,res) => {
         MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
             if (err) throw err;
             var dbo = db.db("SVSB");
+            req.body.password=encrypt(req.body.password)
             var flag=0;
             var query={firstName:req.body.firstName,lastName:req.body.lastName,email:req.body.email}
-           
             dbo.collection("Customers").find(query).toArray(function(err, result) {
              
               if(result.length>0){
