@@ -35,12 +35,12 @@ module.exports.login = (req,res) => {
             
             // db.close();
             var dbo = db.db("SVSB");
-            req.body.password=crypt.encrypt(req.body.password)
-            query={email:req.body.email, password:req.body.password}
+            query={email:req.body.email}
             dbo.collection("Customers").find(query).toArray(function(err, result) {
                 if (err) throw err;
-                //console.log(result);
-                if(result.length>0){
+                console.log(crypt.decrypt(result[0].password));
+                if(result.length>0&&req.body.password==crypt.decrypt(result[0].password)){
+                  
                   req.session.user=result[0];
                   //console.log(req.session.user)
                   res.send('success');
