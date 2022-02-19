@@ -80,10 +80,10 @@
                     </li> 
 						<li><a class="waves-effect waves-dark" href="projects.html">Projects</a></li>
                         <li><a class="waves-effect waves-dark" href="portfolio.html">Gallery</a></li>
-                        <li class="HillSide"><a href="pricing.html" class="waves-effect waves-dark">Pricing</a></li>
+                         
                         <li><a class="waves-effect waves-dark" href="contact.html">Contact</a></li>
-												<li><a class="waves-effect waves-dark" href="login.html">Sign In</a></li>
-                        <li><a class="waves-effect waves-dark" href="register.html">Join Us</a></li>
+												<li id="loggedIn"><a class="waves-effect waves-dark" href="login.html">Sign In</a></li>
+                         
                     </ul>
                 </div>
             </div>
@@ -220,8 +220,11 @@
     url: '/login',
     data: {email:email,password:password},
     success: function(res){ 
-        if(res=='success'){
-          window.location.href="index.html"
+        if(res[0]=='success'){
+					window.location.href="index.html"
+					sessionStorage['email']=res[1]
+					sessionStorage['username']=res[2]
+
         }
         else{
            alert('Please check your credentials')

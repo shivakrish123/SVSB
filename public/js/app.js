@@ -1,8 +1,13 @@
-const { isEmpty } = require("lodash");
 
-
-
-
+if(window.location.pathname=="/Admin/showProperties.html"||window.location.hrepathnamef=="/Admin/addProperties.html"||window.location.pathname=="/Admin/editProperty.html")
+{
+  if(sessionStorage['email']!='admin@svsb.com'){
+    window.location.href="login.html"
+  }
+}
+if (sessionStorage['email']){
+  $('#loggedIn').html('<a class="waves-effect waves-dark" href="javascript:void(0)" style="cursor:default;">Welcome '+sessionStorage['username']+'!</a>')
+}
 
 
 function filterProperties(type){

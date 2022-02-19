@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()) ;
 app.use(session({secret: 'ssshhhhh'})); // secret is necessary for managing sessions
 
+let forgotPassword = require('./modeler/forgotPassword');
 let addProperty = require('./modeler/addProperty');
 let filterProperties = require('./modeler/filterProperties');
 let filterPropertiesAdmin = require('./modeler/filterPropertiesAdmin');
@@ -56,6 +57,10 @@ app.post('/setTileData',(req,res)=>{
 app.post('/getPropertiesForEdit',(req,res)=>{
     //const s = req.session;
     getPropertiesForEdit.getPropertiesForEdit(req,res);
+})
+app.post('/forgotPassword',(req,res)=>{
+    //const s = req.session;
+    forgotPassword.forgotPassword(req,res);
 })
 app.get('/getProperties',(req,res)=>{
     //const s = req.session;

@@ -3,7 +3,6 @@ const { MongoClient } = require('mongodb');
 const url = "mongodb+srv://sainatharjun:saisai71@cluster0.zroar.mongodb.net/SVSB?retryWrites=true&w=majority";
 var CryptoJS = require("crypto-js");
 
-
 var crypt = {
   // (B1) THE SECRET KEY
   secret : "CIPHERKEY",
@@ -27,30 +26,28 @@ var crypt = {
 
 
 
-module.exports.login = (req,res) => {
-   
-       
+
+module.exports.forgotPassword = async (req,res) => {
         MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
             if (err) throw err;
-            
-            // db.close();
             var dbo = db.db("SVSB");
-            query={email:req.body.email}
-            dbo.collection("Customers").find(query).toArray(function(err, result) {
-                if (err) throw err;
-                console.log(crypt.decrypt(result[0].password));
-                if(result.length>0&&req.body.password==crypt.decrypt(result[0].password)){
-                  
-                  req.session.user=result[0];
-                  //console.log(req.session.user)
-                  res.send(['success',result[0].email,result[0].firstName]);
-                }
-                else{
-                  res.send('failed');
-                }
-              });
+            req.body.password=crypt.encrypt(req.body.password)
+            var flag=0;
+            var password=req.body.password
+            var query={email:req.body.email,}
+            var newvalues={$set:{password:password}}
+            dbo.collection("Customers").updateOne(query, newvalues, function(err, res) {
+              if (err) {throw err;};
+              console.log("1 document updated");
+            });
+            res.send('success')
+
+             
+          
+          
+           
           });
 
-
+          
 
 }
